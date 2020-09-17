@@ -31,8 +31,7 @@
   - `cipher(string)`
     Takes a string and either encrypts or decrytps it based on the user's needs.
 ​
-  - `reverseString(string)`  
-    takes a string and returns it reversed.
+  - `reverseString(string)` takes a string and returns it reversed.
 
 <hr/>
 
