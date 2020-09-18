@@ -45,14 +45,23 @@ function caesar(argument) {
       encryption += char;
     }
   }
+
+  let i = 0;
+  while (i < argument.length) {
+    if (argument[i] === argument[i].toUpperCase()) {
+      encryption = encryption.replace(encryption[i], encryption[i].toUpperCase());
+    }
+    i += 1;
+  }
   return encryption;
 }
 
 
 function unCaesar(string) {
+  const deString = string.toLowerCase();
   let decryption = '';
-  for (let index = 0; index < string.length; index += 1) {
-    const char = string[index];
+  for (let index = 0; index < deString.length; index += 1) {
+    const char = deString[index];
     const charIndex = characterIndices()[char];
     if (typeof charIndex !== 'undefined') {
       const encryptionIndex = (charIndex + shift) % 26;
@@ -60,6 +69,14 @@ function unCaesar(string) {
     } else {
       decryption += char;
     }
+  }
+
+  let i = 0;
+  while (i < string.length) {
+    if (string[i] === string[i].toUpperCase()) {
+      decryption = decryption.replace(decryption[i], decryption[i].toUpperCase());
+    }
+    i += 1;
   }
   return decryption;
 }
